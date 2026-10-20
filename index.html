@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyMate AI — Your personal learning companion</title>
+<style>
+:root{--bg:#f7f8fc;--panel:#fff;--ink:#172033;--muted:#697386;--line:#e5e8f0;--primary:#6558e8;--primary2:#8a7cf5;--green:#16a085;--orange:#f59e0b;--shadow:0 10px 30px rgba(29,38,70,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:11px;padding:11px 15px;font-weight:650;background:var(--primary);color:#fff}button:hover{filter:brightness(1.04)}button.secondary{background:#f0efff;color:var(--primary)}button.light{background:#f4f6fa;color:var(--ink)}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:24px}.brand{display:flex;gap:10px;align-items:center;font-weight:850;font-size:21px;padding:0 9px}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#a49bff);color:white;font-size:20px}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:2px}.nav-label{font-size:10px;letter-spacing:1.5px;color:#9aa2b2;font-weight:800;padding:0 12px;margin-bottom:7px}.nav{display:grid;gap:5px}.nav button{background:transparent;color:#606b80;text-align:left;display:flex;gap:12px;align-items:center;font-weight:650}.nav button.active,.nav button:hover{background:#f0efff;color:var(--primary)}.side-note{margin-top:auto;background:#f5f3ff;border-radius:16px;padding:15px;font-size:13px;color:#5f568f;line-height:1.5}.main{padding:30px clamp(18px,4vw,52px);max-width:1500px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}.greeting h1{font-size:clamp(25px,3vw,34px);margin:0 0 7px;letter-spacing:-1px}.greeting p{margin:0;color:var(--muted)}.avatar{width:43px;height:43px;border-radius:50%;background:#ffe5ce;color:#a04c1e;display:grid;place-items:center;font-weight:800}.section{display:none}.section.active{display:block}.hero{background:linear-gradient(115deg,#6558e8,#8b7ef7);border-radius:22px;padding:28px 30px;color:white;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:var(--shadow);margin-bottom:22px}.hero h2{font-size:25px;margin:0 0 9px}.hero p{margin:0 0 18px;max-width:540px;color:#efedff;line-height:1.6}.hero button{background:white;color:var(--primary)}.hero-art{font-size:76px;opacity:.95;padding:10px 20px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}.stat-icon{width:34px;height:34px;border-radius:10px;background:#f0efff;display:grid;place-items:center;font-size:17px}.stat strong{display:block;font-size:27px;margin:12px 0 5px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}.card h3{margin:0 0 5px;font-size:17px}.sub{color:var(--muted);font-size:13px;margin:0 0 18px}.task{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.task:last-child{border-bottom:0}.task input{width:17px;height:17px;accent-color:var(--primary)}.task .taskname{flex:1}.task.done .taskname{text-decoration:line-through;color:#9aa2b2}.pill{font-size:11px;padding:5px 8px;border-radius:8px;background:#fff4dd;color:#a56b00;font-weight:700}.progress{height:8px;background:#eceef5;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--primary2));border-radius:20px}.subject{display:flex;align-items:center;gap:12px;margin:15px 0}.subject-ico{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#f0efff;font-size:20px}.subject-info{flex:1}.subject-info strong{display:block;font-size:14px}.subject-info small{color:var(--muted)}.subject .progress{width:90px}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px}.section-title h2{margin:0;font-size:25px}.formrow{display:grid;gap:7px;margin:14px 0}.formrow label{font-weight:700;font-size:13px}.formrow input,.formrow textarea,.formrow select{width:100%;border:1px solid var(--line);background:white;border-radius:11px;padding:12px;color:var(--ink);outline-color:var(--primary)}.formrow textarea{min-height:130px;resize:vertical}.inlineform{display:flex;gap:9px}.inlineform input{flex:1;min-width:0;border:1px solid var(--line);border-radius:11px;padding:12px}.answer{background:#f5f3ff;border:1px solid #e6e1ff;border-radius:13px;padding:15px;line-height:1.7;white-space:pre-wrap;margin-top:15px}.quiz-option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid var(--line);margin:9px 0}.quiz-option.selected{border-color:var(--primary);background:#f5f3ff}.notice{font-size:12px;color:var(--muted);line-height:1.6;margin-top:15px}.timer{text-align:center;padding:25px}.timer-face{font-size:clamp(54px,8vw,84px);font-weight:800;letter-spacing:-3px;margin:22px 0}.timer-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}.empty{padding:20px;text-align:center;color:var(--muted)}footer{text-align:center;color:#a0a7b5;font-size:12px;padding:30px 0 5px}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{position:static;padding:13px 14px;border-right:0;border-bottom:1px solid var(--line);gap:12px}.brand{padding:0 5px}.nav-label,.side-note{display:none}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:10px}.main{padding:22px 16px}.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.hero-art{display:none}}
+@media(max-width:430px){.stats{gap:9px}.stat{padding:13px}.stat strong{font-size:23px}.hero{padding:22px}.topbar{align-items:flex-start}.greeting p{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">✦</div><div>StudyMate AI<small>Your personal learning companion</small></div></div>
+  <div><div class="nav-label">WORKSPACE</div><nav class="nav">
+    <button class="active" data-page="dashboard">⌂ Dashboard</button>
+    <button data-page="planner">▦ Study planner</button>
+    <button data-page="tutor">✧ AI tutor</button>
+    <button data-page="notes">▤ Notes summarizer</button>
+    <button data-page="quiz">✓ Practice quiz</button>
+    <button data-page="focus">◷ Focus timer</button>
+  </nav></div>
+  <div class="side-note"><strong>Small steps add up.</strong><br>Stay curious, keep learning, and celebrate your progress every day. ✨</div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="greeting"><h1 id="greeting">Good afternoon! 👋</h1><p>Your next big achievement starts with one small step.</p></div><div class="avatar">S</div></header>
+<section class="section active" id="dashboard">
+  <div class="hero"><div><h2>Make today a great study day.</h2><p>Your friendly study companion helps you stay organized, learn tricky topics, and build habits that last.</p><button onclick="showPage('planner')">Plan my day →</button></div><div class="hero-art">📚</div></div>
+  <div class="stats">
+    <div class="stat"><div class="stat-top">Tasks completed <span class="stat-icon">✓</span></div><strong id="completedCount">0/3</strong><small>Keep up the momentum</small></div>
+    <div class="stat"><div class="stat-top">Study time <span class="stat-icon">◷</span></div><strong id="studyTime">0 min</strong><small>This session on this page</small></div>
+    <div class="stat"><div class="stat-top">Current streak <span class="stat-icon">🔥</span></div><strong>1 day</strong><small>Start your streak today</small></div>
+    <div class="stat"><div class="stat-top">Focus score <span class="stat-icon">✦</span></div><strong id="focusScore">0%</strong><small>Based on completed tasks</small></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Today's checklist</h3><p class="sub">A few focused tasks can make a big difference.</p><div id="dashboardTasks"></div><button class="secondary" onclick="showPage('planner')">Manage tasks</button></div>
+    <div class="card"><h3>Your learning areas</h3><p class="sub">Sample subjects — personalize them as you go.</p>
+      <div class="subject"><div class="subject-ico">💻</div><div class="subject-info"><strong>Computer Science</strong><small>Keep practicing the basics</small></div><div class="progress"><span style="width:65%"></span></div></div>
+      <div class="subject"><div class="subject-ico">🧮</div><div class="subject-info"><strong>Mathematics</strong><small>One problem at a time</small></div><div class="progress"><span style="width:42%"></span></div></div>
+      <div class="subject"><div class="subject-ico">⚡</div><div class="subject-info"><strong>Physics</strong><small>Review key concepts</small></div><div class="progress"><span style="width:78%"></span></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="planner">
+  <div class="section-title"><div><h2>Study planner</h2><p class="sub">Add tasks and check them off as you finish.</p></div></div>
+  <div class="card"><form id="taskForm" class="inlineform"><input id="taskInput" placeholder="e.g. Revise inheritance in C++" required maxlength="100"><button>Add task</button></form><div id="plannerTasks" style="margin-top:15px"></div></div>
+</section>
+<section class="section" id="tutor">
+  <div class="section-title"><div><h2>AI tutor demo</h2><p class="sub">Ask for a simple explanation of a topic.</p></div></div>
+  <div class="card"><div class="formrow"><label for="tutorTopic">What would you like to learn?</label><input id="tutorTopic" placeholder="e.g. What is a hash map?"></div><button onclick="explainTopic()">Explain simply</button><div id="tutorAnswer" aria-live="polite"></div><p class="notice">Demo mode: answers are generated from a small set of built-in examples, not a live AI service.</p></div>
+</section>
+<section class="section" id="notes">
+  <div class="section-title"><div><h2>Notes summarizer</h2><p class="sub">Turn long notes into a quick revision sheet.</p></div></div>
+  <div class="card"><div class="formrow"><label for="notesInput">Paste your notes</label><textarea id="notesInput" placeholder="Paste class notes, a chapter, or key points here..."></textarea></div><button onclick="summarizeNotes()">Create summary</button><div id="notesAnswer" aria-live="polite"></div><p class="notice">This browser-only demo extracts key sentences. It does not send your notes anywhere.</p></div>
+</section>
+<section class="section" id="quiz">
+  <div class="section-title"><div><h2>Practice quiz</h2><p class="sub">A quick check of your computer science basics.</p></div></div>
+  <div class="card"><div id="quizContent"></div><div id="quizFeedback" aria-live="polite"></div><button class="secondary" id="nextQuiz" onclick="nextQuestion()">Next question →</button></div>
+</section>
+<section class="section" id="focus">
+  <div class="section-title"><div><h2>Focus timer</h2><p class="sub">Try a short focus session with a small break afterward.</p></div></div>
+  <div class="card timer"><div class="pill">POMODORO FOCUS SESSION</div><div class="timer-face" id="timerFace">25:00</div><p class="sub" id="timerStatus">Ready when you are. Put distractions aside.</p><div class="timer-actions"><button id="timerToggle" onclick="toggleTimer()">Start focus</button><button class="secondary" onclick="resetTimer()">Reset</button><button class="light" onclick="setTimer(5)">5 min break</button><button class="light" onclick="setTimer(25)">25 min focus</button></div></div>
+</section>
+<footer>StudyMate AI · Learn smarter, one step at a time · Prototype</footer>
+</main>
+</div>
+<script>
+const tasks=[
+ {id:1,text:"Review today's lecture notes",done:false},
+ {id:2,text:"Practice 3 coding problems",done:false},
+ {id:3,text:"Take a 10-minute revision break",done:false}
+];
+let nextTaskId=4, sessionMinutes=0, secondsLeft=25*60, timerInterval=null, timerRunning=false;
+const pages=["dashboard","planner","tutor","notes","quiz","focus"];
+function showPage(page){pages.forEach(p=>document.getElementById(p).classList.toggle("active",p===page));document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===page));if(page==="quiz")renderQuiz();window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+function renderTasks(){const html=tasks.map(t=>`<div class="task ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} aria-label="Mark ${escapeHTML(t.text)} complete" onchange="toggleTask(${t.id})"><span class="taskname">${escapeHTML(t.text)}</span>${t.done?'<span class="pill">Done</span>':''}</div>`).join("");document.getElementById("dashboardTasks").innerHTML=html||'<div class="empty">No tasks yet. Add one in your planner.</div>';document.getElementById("plannerTasks").innerHTML=html||'<div class="empty">No tasks yet. Add one above.</div>';const done=tasks.filter(t=>t.done).length;document.getElementById("completedCount").textContent=`${done}/${tasks.length}`;document.getElementById("focusScore").textContent=(tasks.length?Math.round(done/tasks.length*100):0)+"%"}
+function toggleTask(id){const t=tasks.find(t=>t.id===id);if(t)t.done=!t.done;renderTasks()}
+document.getElementById("taskForm").addEventListener("submit",e=>{e.preventDefault();const input=document.getElementById("taskInput"),text=input.value.trim();if(!text)return;tasks.push({id:nextTaskId++,text,done:false});input.value="";renderTasks()});
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function explainTopic(){const topic=document.getElementById("tutorTopic").value.trim();if(!topic){document.getElementById("tutorAnswer").innerHTML='<div class="answer">Enter a topic first, and I’ll help you get started.</div>';return}const t=topic.toLowerCase();let answer;
+if(t.includes("hash map")||t.includes("unordered_map"))answer="A hash map stores information as key–value pairs. You use a key to quickly find its value. Example: a student roll number can be the key and the student’s name the value. In C++, unordered_map is a common hash-map container.";
+else if(t.includes("inheritance"))answer="Inheritance lets one class reuse properties and functions from another class. The existing class is the base class, and the new class is the derived class. It helps reduce repeated code and organize related classes.";
+else if(t.includes("cloud computing"))answer="Cloud computing means using computing services—such as servers, storage, databases, and software—over the internet instead of managing all the hardware yourself.";
+else if(t.includes("array"))answer="An array stores multiple values of the same type in a sequence. Each value can be accessed using an index. In C++, ordinary array indexing starts at 0.";
+else if(t.includes("oop")||t.includes("object-oriented"))answer="Object-oriented programming (OOP) organizes code around objects that combine data and functions. Four common ideas are encapsulation, abstraction, inheritance, and polymorphism.";
+else answer=`Let's break “${topic}” into small parts:\n\n1. Start with the definition in your own words.\n2. Identify the main idea and why it is useful.\n3. Work through one small example.\n4. Explain it back without looking at your notes.\n\nTip: If you share your class notes, use the Notes Summarizer to make a revision sheet.`;
+document.getElementById("tutorAnswer").innerHTML='<div class="answer">'+escapeHTML(answer)+'</div>'}
+function summarizeNotes(){const raw=document.getElementById("notesInput").value.trim(),out=document.getElementById("notesAnswer");if(!raw){out.innerHTML='<div class="answer">Paste some notes first.</div>';return}const sentences=raw.split(/(?<=[.!?])\s+|\n+/).map(s=>s.trim()).filter(Boolean);let selected=sentences.filter(s=>s.length>25).slice(0,5);if(!selected.length)selected=sentences.slice(0,5);out.innerHTML='<div class="answer"><strong>Quick revision notes</strong>\n\n'+escapeHTML(selected.map((s,i)=>(i+1)+". "+s).join("\n\n"))+'\n\nRemember: review the original notes for details that may be missing.</div>'}
+const questions=[{q:"Which C++ container is commonly used as a hash map?",opts:["vector","unordered_map","queue","stack"],correct:1,why:"unordered_map stores key–value pairs and is commonly implemented using hashing."},{q:"What does inheritance help a class do?",opts:["Reuse features of another class","Delete all objects automatically","Sort every array","Connect to Wi-Fi"],correct:0,why:"Inheritance lets a derived class reuse and extend a base class."},{q:"What is cloud computing?",opts:["Only saving files on a USB drive","Using computing services over the internet","A type of keyboard","Writing code without a computer"],correct:1,why:"Cloud computing provides services such as storage and servers over a network, usually the internet."},{q:"In a typical C++ array, what is the first index?",opts:["-1","1","0","Depends on the user's name"],correct:2,why:"C++ arrays use zero-based indexing."}];
+let qIndex=0,answered=false,quizScore=0;
+function renderQuiz(){const q=questions[qIndex];answered=false;document.getElementById("quizFeedback").innerHTML="";document.getElementById("nextQuiz").textContent=qIndex===questions.length-1?"Restart quiz ↻":"Next question →";document.getElementById("quizContent").innerHTML=`<p class="sub">Question ${qIndex+1} of ${questions.length} · Score ${quizScore}</p><h3>${q.q}</h3>${q.opts.map((o,i)=>`<button class="quiz-option" onclick="answerQuiz(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join("")}`}
+function answerQuiz(i){if(answered)return;answered=true;const q=questions[qIndex];document.querySelectorAll(".quiz-option").forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.style.borderColor="#16a085";if(j===i&&i!==q.correct)b.style.borderColor="#e66b6b"});if(i===q.correct)quizScore++;document.getElementById("quizFeedback").innerHTML=`<div class="answer">${i===q.correct?"Correct! 🎉":"Not quite."} ${escapeHTML(q.why)}</div>`;document.querySelector("#quizContent .sub").textContent=`Question ${qIndex+1} of ${questions.length} · Score ${quizScore}`}
+function nextQuestion(){if(qIndex===questions.length-1){qIndex=0;quizScore=0}else qIndex++;renderQuiz()}
+function drawTimer(){const m=Math.floor(secondsLeft/60),s=secondsLeft%60;document.getElementById("timerFace").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")}
+function setTimer(minutes){pauseTimer();secondsLeft=minutes*60;drawTimer();document.getElementById("timerStatus").textContent=minutes===5?"Short break selected. Take a breath.":"Focus session selected. You’ve got this.";document.getElementById("timerToggle").textContent="Start focus"}
+function toggleTimer(){if(timerRunning){pauseTimer();return}timerRunning=true;document.getElementById("timerToggle").textContent="Pause";document.getElementById("timerStatus").textContent="Focus time — one task at a time.";let last=Date.now();timerInterval=setInterval(()=>{const now=Date.now();const elapsed=Math.floor((now-last)/1000);if(elapsed>0){secondsLeft=Math.max(0,secondsLeft-elapsed);sessionMinutes+=elapsed/60;document.getElementById("studyTime").textContent=Math.floor(sessionMinutes)+" min";last=now;drawTimer()}if(secondsLeft<=0){pauseTimer();document.getElementById("timerStatus").textContent="Session complete! Take a short break. 🎉";document.getElementById("timerToggle").textContent="Start again"}},250)}
+function pauseTimer(){timerRunning=false;if(timerInterval)clearInterval(timerInterval);timerInterval=null;document.getElementById("timerToggle").textContent="Resume focus"}
+function resetTimer(){pauseTimer();secondsLeft=25*60;drawTimer();document.getElementById("timerToggle").textContent="Start focus";document.getElementById("timerStatus").textContent="Ready when you are. Put distractions aside."}
+const hour=new Date().getHours();document.getElementById("greeting").textContent=(hour<12?"Good morning":hour<18?"Good afternoon":"Good evening")+"! 👋";
+renderTasks();drawTimer();renderQuiz();
+</script>
+</body>
+</html>
